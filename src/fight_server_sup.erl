@@ -24,5 +24,8 @@ start_link() ->
 %% ===================================================================
 
 init([]) ->
-    {ok, { {one_for_one, 5, 10}, []} }.
+    Children = [
+          {gate_conn,{gate_conn,start_link,[]},transient,infinity,supervisor,[gate_conn]}     
+        ],
+    {ok, { {one_for_one, 5, 10}, Children} }.
 
