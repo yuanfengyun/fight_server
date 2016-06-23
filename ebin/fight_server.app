@@ -5,4 +5,4 @@
               {applications,[kernel,stdlib]},
               {mod,{fight_server_app,[]}},
               {env,[]},
-              {modules,[fight_server_app,fight_server_sup,gate_conn]}]}.
+              {modules,[db,fight_server_app,fight_server_sup,gate_conn]}]}.

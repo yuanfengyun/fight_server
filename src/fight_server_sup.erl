@@ -25,7 +25,8 @@ start_link() ->
 
 init([]) ->
     Children = [
-          {gate_conn,{gate_conn,start_link,[]},transient,infinity,supervisor,[gate_conn]}     
+          {gate_conn,{gate_conn,start_link,[]},transient,infinity,supervisor,[gate_conn]},     
+          {db,{db,start_link,[]},transient,infinity,supervisor,[db]}     
         ],
     {ok, { {one_for_one, 5, 10}, Children} }.
 
